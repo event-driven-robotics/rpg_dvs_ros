@@ -1464,14 +1464,11 @@ bool CirclesGridFinder::areSegmentsIntersecting(Segment seg1, Segment seg2)
    cv::Point2f t1 = e1-s1;
    cv::Point2f n1(t1.y, -t1.x);
    double c1 = -n1.ddot(s1);
-
    cv::Point2f t2 = e2-s2;
    cv::Point2f n2(t2.y, -t2.x);
    double c2 = -n2.ddot(s2);
-
    bool seg1 = ((n1.ddot(s2) + c1) * (n1.ddot(e2) + c1)) <= 0;
    bool seg1 = ((n2.ddot(s1) + c2) * (n2.ddot(e1) + c2)) <= 0;
-
    return seg1 && seg2;
    */
 }
